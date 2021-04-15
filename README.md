@@ -1,5 +1,10 @@
 ### Hi there 👋
 
+Call me Sepideh
+
+Woman in tech aspiring to be a developer 
+
+- 🔭 I’m currently working on learning Javascript
 <!--
 **sepidehshafiei/sepidehshafiei** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
