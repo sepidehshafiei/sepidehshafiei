@@ -1,0 +1,78 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #838386;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #ececf2;
+    border: 1px solid #8c7f7f;
+    border-radius: 5px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 20px;
+  }
+  
+  select {
+    height: 34px;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="date"],
+  select {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 20px;
+  }
+  
+  select {
+    height: 34px;
+  }
+  
+  input[type="submit"] {
+    background-color: #2cd8aa;
+    color: #0f7d25;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #dae1e1;
+  }
+  
+  /* Add more specific styles for invalid fields */
+  input:invalid,
+  select:invalid {
+    border-color: #f92020;
+  }
+  
+  /* Add more specific styles for valid fields */
+  input:valid,
+  select:valid {
+    border-color: #cccccc;
+  }

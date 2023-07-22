@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <!-- Add the correct path to your CSS file. Assuming it's in the same folder as the HTML file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Load AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body ng-app="registrationApp" ng-controller="RegistrationController">
+    <form id="registrationForm">
+        <div class="textintro">
+            <h1>Registration Form</h1>
+        </div>
+
+        <label for="fullName">Nome completo:</label>
+        <input type="text" id="fullName" ng-model="user.fullName" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" ng-model="user.email" required><br>
+
+        <label for="nif">NIF:</label>
+        <input type="text" id="nif" ng-model="user.nif" required><br>
+
+        <label for="dob">Data de Nascimento:</label>
+        <input type="date" id="dob" ng-model="user.dob" ng-change="validateDOB()" required><br>
+        <span ng-show="isUnderage">You must be at least 18 years old.</span>
+
+        <label for="country">País:</label>
+        <select id="country" ng-model="user.country" ng-change="updateCities()" required>
+            <option value="" disabled selected>Selecione o país</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Spain">Spain</option>
+            <option value="Japan">Japan</option>
+            <option value="France">France</option>
+            <option value="Italy">Italy</option>
+        </select><br>
+
+        <label for="city">Cidade:</label>
+        <select id="city" ng-model="user.city" required>
+            <option value="" disabled selected>Selecione a cidade</option>
+            <optgroup label="Portugal">
+                <option value="Porto">Porto</option>
+                <option value="Lisbon">Lisbon</option>
+            </optgroup>
+            <optgroup label="Spain">
+                <option value="Madrid">Madrid</option>
+                <option value="Barcelona">Barcelona</option>
+            </optgroup>
+            <optgroup label="Japan">
+                <option value="Tokyo">Tokyo</option>
+                <option value="Hiroshima">Hiroshima</option>
+            </optgroup>
+            <optgroup label="France">
+                <option value="Paris">Paris</option>
+                <option value="Nice">Nice</option>
+            </optgroup>
+            <optgroup label="Italy">
+                <option value="Rome">Rome</option>
+                <option value="Milan">Milan</option>
+            </optgroup>
+        </select><br>
+
+        <label for="address">Endereço:</label>
+        <input type="text" id="address" ng-model="user.address" required><br>
+
+       <label for="postalCode">Codigo-Postal:</label>
+             <input type="text" id="postalCode" ng-model="user.postalCode" required><br>
+        <label for="phone">Telefone:</label>
+        <input type="text" id="phone" ng-model="user.phone" required><br>
+
+        <label for="gender">Género:</label>
+        <select id="gender" ng-model="user.gender" required>
+            <option value="" disabled selected>Selecione o género</option>
+            <option value="male">Masculino</option>
+            <option value="female">Feminino</option>
+        </select><br>
+
+        <!-- Make sure you have a function defined to handle form submission -->
+        <input type="submit" value="Enviar" id="submitButton" ng-disabled="!registrationForm.$valid">
+    </form>
+
+    <script>
+        // AngularJS application module and controller
+        var app = angular.module('registrationApp', []);
+        app.controller('RegistrationController', function($scope) {
+            // Initialize user object
+            $scope.user = {};
+
+            // Add a function to validate the date of birth and set a flag for underage
+            $scope.validateDOB = function() {
+                // Implement your validation logic here
+                // For example, check if the user is at least 18 years old
+                // and set the 'isUnderage' flag accordingly
+                // $scope.isUnderage = ...;
+            };
+
+            // Add a function to handle form submission
+            $scope.submitForm = function() {
+                // Implement your form submission logic here
+                // You can access form data using $scope.user object
+            };
+        });
+    </script>
+</body>
+</html>
